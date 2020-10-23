@@ -88,11 +88,12 @@
 #
 
 
-# In[62]:
 
+#TRADER SEGMENT OPTIMIZATION: 
 
-#Segments assigned and T1 asks what priority trader 
-#would like to assign each segment
+#SOLUTION 1: Trader ranks segments based on performance
+
+#Segments assigned and T1 asks what priority trader would like to assign each segment
 #Trader ranks each segment using an integer
 
 Windows= int(input("Priority #"))
@@ -101,41 +102,36 @@ DoorLocks= int(input("Priority #"))
 ExtDoors=int(input("Priority #"))
 
 Assigned_Segments=Windows+Ladders+DoorLocks+ExtDoors
-#T1 loops through all segments based on Priority level
-#At the beginning of the campaign before top performers are establsihed
-#trader 
 
+#T1 loops through all assigned segments based on Priority level
+#At the beginning of the campaign before top performers are establsihed trader sets all segment priorities to 1.
+#If priority is equal to 1, T1 bids there first.
 
-#If priority is equal to 1, T1 bids
-
-def priority(a): #defining priority. 
+def priority(a): #defining priority 
      #next bid level is equal to priority level plus 1
     while priority ==1:
         bid=1
         return bid #bid here first since priority is 1
     if win!=1:
-        bid=a+1 #if bid is not won keep bidding
+        bid=a+1 #if bid is not won keep bidding on next segment in priority ranking.
     return bid 
             
-    
 Assigned_Segments(priority(a)) #Calls the bid logic function for all assigned segments
 
 
-# In[91]:
+#SOLUTION 2: Trader sets performance threshold and T1 ranks segments based on how they compare to threshold
 
-
-#taking it a step further
-#t1 automatically prioritizes segments based on thresholds
 #Campaign goal is ROI
 #ROI's for Segments
 Windows= 20
 Ladders= 10
 DoorLocks= 5
 ExtDoors= 35
+
 #threshold for ROI set by trader
 threshold= 30
 
-#all segments assigned
+#all segments assigned to strategy
 segments=[Windows,Ladders,DoorLocks,ExtDoors]
 
 
@@ -146,17 +142,4 @@ def bid(segment): #which segment to bid in?
             return bid first #bid in these segments first
         else priority < 1: #otherwise if priority is less than 1, bid in these segments last since they're lower performing
             return bid last 
-priority=bid(segment) #set priority in bidding to 
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
+bid_priority=bid(segment) #set priority in bidding to whatever function generates.
