@@ -11,10 +11,6 @@ seg = pd.read_csv('Fake Segment Report.csv') #imports fake segment level report 
 
 #TRADER SEGMENT LEVEL REPORTING:
 
-#Shows trader important info like which segments have the most conversions
-seg['Segment Name'].value_counts().head().plot(kind='bar',color='hotpink')
-
-
 #Shows how many users fall into more than one segment
 seg.groupby(['mm_uuid'])[['Segment Name']].nunique().sort_values(by='Segment Name',ascending=False)
  
@@ -28,6 +24,10 @@ def dedupe(x):
     return y
 
 seg['Segment Name'].apply(dedupe)
+
+#Shows trader important info like which segments have the most conversions
+seg['Segment Name'].value_counts().head().plot(kind='bar',color='hotpink')
+
 
 #TRADER SEGMENT OPTIMIZATION: 
 
