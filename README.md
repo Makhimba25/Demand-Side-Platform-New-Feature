@@ -1,4 +1,4 @@
-**SOLVING T1 WITH PSUEDOCODE
+**SOLVING T1 WITH PSUEDO CODE
 
 **REALITY
 
@@ -14,10 +14,10 @@ The ability to pull segment reporting and then use it to make optimizations  cu
 
 Although there are ways to get a segment report within MM, T1 does not have a direct segment level reporting feature. This is because impressions, spend and conversions are not deduped if a user falls into more than one segment.
 
-* SOLUTION 1: Dedupe and give trader access to segment info
+SOLUTION 1: Dedupe and give trader access to segment info
 
 1. Use Pandas group by function, to filter by mmuid and then count the number of uniques within a segment for each user. This means that the user falls into a particular segment X amount of times. 
-2. Using def function, define a dedupe function with conditionals so that if the user count within a segment is above 1, set the value to one in the dataframe being used. This means that all users will only be counted within one segment. 
+2. Define a dedupe function with conditionals so that if the user count within a segment is above 1, set the value to one in the dataframe being used. This means that all users will only be counted within one segment. 
 3. Using numerical python and pyplot, show a bar graph of the segments that drove the most conversions so that traders can easily visualize what the top performers for their campaign is.
 
 
@@ -40,5 +40,5 @@ Without having to breakout strategies, trader can rank segments based on perform
 
 Same logic as above except trader sets threshold and T1 creates segment ranking relative to threshold set by trader.
 1. Trader sets threshold to X.
-2. If seg perf is above X, rank segment or segments as 1 then Follow Solution 1 logic.
-3. If seg perf is below X, rank segment or segments relative to the number of segments assigned. (ex. if there are 30 segments, rank low performers at 28,29,30.)
+2. If seg perf is above X, rank segment or segments as 1,2,3 then Follow Solution 1 logic.
+3. If seg perf is below X, rank segment or segments relative to the number of segments assigned. (ex. if there are 30 segments, rank low performers as 28,29,30.)
