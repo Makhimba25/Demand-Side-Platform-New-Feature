@@ -21,11 +21,11 @@ Although there are ways to get a segment report within MM, T1 does not have a d
 3. Using numerical python and pyplot, show a bar graph of the segments that drove the most conversions so that traders can easily visualize what the top performers for their campaign is.
 
 
-**PROBLEM 2: 
+PROBLEM 2: 
 
 Once trader gets segment level reporting, the only way to optimize off of top performers vs low performers is to break out strategies.
 
-* SOLUTION 1: Trader Dictates Priority
+SOLUTION 1: Trader Dictates Priority
 
 Without having to breakout strategies, trader can rank segments based on performance then T1 will use waterfall logic to bid on users based on the ranking of the segment they are in.
 
